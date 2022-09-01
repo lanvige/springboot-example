@@ -1,4 +1,4 @@
-package com.zhenbei.uniscrm;
+package com.lanvige.example.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;

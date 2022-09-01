@@ -9,8 +9,8 @@
     <!--    <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     <!--</parent>-->
 
-    <groupId>com.zhenbei</groupId>
-    <artifactId>uniscrm</artifactId>
+    <groupId>com.lanvige</groupId>
+    <artifactId>springboot-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>uniscrm</name>
     <description>Demo project for Spring Boot</description>
@@ -66,21 +66,30 @@
 
     <!-- build -->
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+        <finalName>springboot-example</finalName>
 
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <!-- 如果不指定，则会使用 spring-boot-dependencies 中配置的 3.9.0 -->
                 <!-- <version>3.10.1</version>-->
                 <configuration>
+                    <!-- 源代码使用的JDK版本 -->
                     <source>${java.version}</source>
+                    <!-- 需要生成的目标class文件的编译版本 -->
                     <target>${java.version}</target>
+                    <!-- 字符集编码 -->
                     <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+
+                <configuration>
+                    <mainClass>com.lanvige.example.UniscrmApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
